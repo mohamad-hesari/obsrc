@@ -38,6 +38,7 @@ function Header() {
 
 function EditForm(props: { tile: Tile }) {
   const [tile, setTile] = React.useState(props.tile);
+  const saveTile = useTilesStore((state) => state.saveTile);
   return (
     <div className="space-y-3">
       <div className="space-y-1">
@@ -54,7 +55,12 @@ function EditForm(props: { tile: Tile }) {
           }
         />
       </div>
-      <Button className="w-full" color="primary">
+      <Button
+        as={Link}
+        to="/"
+        className="w-full"
+        color="primary"
+        onClick={() => saveTile(tile)}>
         Save
       </Button>
     </div>

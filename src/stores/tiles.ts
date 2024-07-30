@@ -72,7 +72,9 @@ type TilesStore = {
   tiles: Tile[];
   tile?: Tile;
   editable: boolean;
+  draggable: boolean;
   toggleEditable: () => void;
+  toggleDraggable: () => void;
   editTile: (tile: Tile) => void;
   addTile: (tile: Tile) => void;
   saveTile: (tile: Tile) => void;
@@ -84,7 +86,9 @@ export const useTilesStore = create<TilesStore>()(
     (set) => ({
       tiles: [],
       editable: false,
+      draggable: false,
       toggleEditable: () => set((state) => ({ editable: !state.editable })),
+      toggleDraggable: () => set((state) => ({ draggable: !state.draggable })),
       editTile: (tile) => set({ tile }),
       addTile: (tile) => set((state) => ({ tiles: [...state.tiles, tile] })),
       saveTile: (tile) => {

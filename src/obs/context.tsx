@@ -89,6 +89,8 @@ export const useOBSContextStore = create<OBSContext>((set) => ({
 
 export function useSelectedHelper() {
   const helpers = useOBSContextStore((state) => state.helpers);
+  if (helpers.length === 0) return undefined;
+  else if (helpers.length === 1) return helpers[0].helper;
   return helpers.find((h) => h.selected)?.helper;
 }
 
