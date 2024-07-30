@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  @apply max-w-sm mx-auto sm:border border-gray-600 sm:shadow-sm sm:min-h-screen select-none;
+}

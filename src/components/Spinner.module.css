@@ -1,0 +1,15 @@
+.spinner {
+  @apply animate-spin text-gray-200 dark:text-gray-600;
+
+  .primary {
+    @apply fill-blue-500;
+  }
+  .secondary {
+  }
+  .white {
+  }
+  .black {
+  }
+  .error {
+  }
+}

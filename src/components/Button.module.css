@@ -1,0 +1,63 @@
+.btn {
+  @apply space-x-2 inline-flex select-none items-center justify-center rounded-md px-6 py-2 outline-none transition-all ease-out active:opacity-50;
+
+  &.withIcon {
+    @apply p-1.5;
+
+    .icon {
+      @apply h-5 w-5;
+    }
+  }
+
+  &.disabled {
+    @apply border-opacity-80 bg-opacity-80  text-opacity-80;
+  }
+  &.rounded {
+    @apply rounded-full;
+  }
+  &.outline {
+    @apply border;
+
+    &.primary {
+      @apply border-blue-600 text-blue-600;
+    }
+
+    &.secondary {
+      @apply border-green-600  text-green-600;
+    }
+
+    &.white {
+      @apply border-white text-gray-800;
+    }
+
+    &.glasses {
+      @apply border-white text-white;
+    }
+
+  }
+  &.fill {
+    &.primary {
+      @apply bg-blue-600 text-white;
+    }
+
+    &.secondary {
+      @apply bg-green-600  text-green-600;
+    }
+
+    &.white {
+      @apply bg-white text-gray-800;
+    }
+
+    &.glasses {
+      @apply bg-transparent text-white;
+    }
+  }
+
+  .loading {
+    @apply h-4 w-4;
+  }
+
+  * {
+    @apply pointer-events-none;
+  }
+}
