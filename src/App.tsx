@@ -90,6 +90,7 @@ function AppWrapper() {
           mounted,
           servers: state.servers,
         });
+        setTimeout(() => setLoading(false), 500);
         return;
       }
       console.log(id, "Connecting to servers", state.servers);
