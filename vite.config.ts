@@ -6,8 +6,10 @@ import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+  const baseUrl = env.VITE_BASE_URL || "/";
+  console.log("this is the base url: ", baseUrl);
   return {
-    base: env.VITE_BASE_URL || "/",
+    base: baseUrl,
     plugins: [
       react(),
       VitePWA({
@@ -53,8 +55,8 @@ export default defineConfig(({ command, mode }) => {
           theme_color: "#171717",
           background_color: "#f0e7db",
           display: "standalone",
-          scope: "/",
-          start_url: "/",
+          scope: baseUrl,
+          start_url: baseUrl,
           orientation: "portrait",
         },
       }),
