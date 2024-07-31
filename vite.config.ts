@@ -90,5 +90,8 @@ export default defineConfig(({ command, mode }) => {
               },
       },
     },
+    define: {
+      "import.meta.vitest": undefined,
+    },
   };
 });
