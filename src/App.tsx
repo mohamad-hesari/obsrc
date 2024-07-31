@@ -31,6 +31,10 @@ import Inputs from "./pages/add/Inputs";
 
 const QRCodeScanner = React.lazy(() => import("./pages/QRCodeScanner"));
 
+if (import.meta.env.NODE_ENV === "production") {
+  console.log = function () {};
+}
+
 const connectedRouter = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
@@ -49,6 +53,7 @@ const connectedRouter = createBrowserRouter(
       <Route path="*" element={<Navigate to="/" />} />
     </Route>,
   ),
+  { basename: import.meta.env.VITE_BASE_URL },
 );
 
 const connectRouter = createBrowserRouter(
@@ -61,6 +66,7 @@ const connectRouter = createBrowserRouter(
       <Route path="*" element={<Navigate to="/connect" />} />
     </Route>,
   ),
+  { basename: import.meta.env.VITE_BASE_URL },
 );
 
 function AppWrapper() {
